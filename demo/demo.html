@@ -1,0 +1,58 @@
+<html ng-app="StorageDemo">
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.js"></script>
+	<script type="text/javascript" src="../src/browserStorage.js"></script>
+	<script type="text/javascript" src="demo.js"></script>
+</head>
+<body>
+	<div id="example-1">
+		<h2>Save</h2>
+		<pre>
+			// Saves to localStorage
+			browserStorage.local.save('mykey', 'myvalue');
+			// Saves to sessionStorage
+			browserStorage.session.save('mykey', 'myvalue');
+		</pre>
+		<h2>Save with expiration (in milliseconds)</h2>
+		<pre>
+			// saves the key for 1 second.
+			// When you will try to load it, after the 1 second, it will return null and delete the entry
+			browserStorage.local.save('mykey', 'myvalue', 1000);
+			browserStorage.session.save('mykey', 'myvalue', 1000);
+		</pre>
+		<h2>Load</h2>
+		<pre>
+			// Loads from localStorage
+			browserStorage.local.load('mykey');
+			// Loads from localStorage
+			browserStorage.session.load('mykey');
+		</pre>
+		<h2>Remove</h2>
+		<pre>
+			// Removes this key from localStorage
+			browserStorage.local.remove('mykey');
+			// Removes this key from localStorage
+			browserStorage.session.remove('mykey');
+		</pre>
+		<h2>Clear</h2>
+		<pre>
+			// Removes everything from localStorage
+			browserStorage.local.clear();
+			// Removes everything from localStorage
+			browserStorage.session.clear();
+		</pre>
+	</div>
+	<div id="demo-1" ng-controller="demo1">
+		<h3>First Demo</h3>
+		<div>
+			<input type="text" ng-model="input1" />
+			<input type="button" ng-click="saveInput1()" value="Save!" />
+		</div>
+		<div>
+			<input type="button" ng-click="loadInput1()" value="Load!" />
+			Loaded value: {{loadedValue}}
+		</div>
+	</div>
+</body>
+</html>

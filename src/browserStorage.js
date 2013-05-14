@@ -1,5 +1,5 @@
 /**
- * An angular directive that provides easy access to localStorage and sessionsStorage
+ * An angular module that provides easy access to localStorage and sessionsStorage
  *
  * @author Achilleas Tsoumitas
  * @version 1.0.0
@@ -8,31 +8,31 @@
 
 (function() {
 
-	"use strict";
+	'use strict';
 
-	var Storage = angular.module("Storage", []);
+	var browserStorage = angular.module('browserStorage', []);
 
-	Storage.service("Storage", function($window) {
+	browserStorage.service('browserStorage', function($window) {
 
 		var save = function(type, key, value, expiration) {
 			var object = {
 				data: value
 			};
 			if (expiration) {
-				object.expiration = expiration && Math.round(new Date().getTime() / 1000) + expiration * 60;
+				object.expiration = expiration && Math.round(new Date().getTime() / 1000) + expiration;
 			}
-			$window[type + "Storage"].setObject(key, object);
+			$window[type + 'Storage'].setObject(key, object);
 		};
 
 		var load = function(type, key) {
-			var data = $window[type + "Storage"].getObject(key) || null;
+			var data = $window[type + 'Storage'].getObject(key) || null;
 			if (data) {
 				// if data was found, check if it has expired, or if no expiration exists
 				if (data.expiration && data.expiration > Math.round(new Date().getTime() / 1000) || !data.expiration) {
 					return data.data;
 				} else {
 					// if it has expired, remove it as well
-					$window[type + "Storage"].removeItem(key);
+					$window[type + 'Storage'].removeItem(key);
 					return null;
 				}
 			} else {
@@ -43,10 +43,10 @@
 		var Storage = {
 			local: {
 				save: function(key, value, expiration) {
-					return save("local", key, value, expiration);
+					return save('local', key, value, expiration);
 				},
 				load: function(key) {
-					return load("local", key);
+					return load('local', key);
 				},
 				remove: function(key) {
 					$window.localStorage.removeItem(key);
@@ -57,10 +57,10 @@
 			},
 			session: {
 				save: function(key, value, expiration) {
-					return save("session", key, value, expiration);
+					return save('session', key, value, expiration);
 				},
 				load: function(key) {
-					return load("session", key);
+					return load('session', key);
 				},
 				remove: function(key) {
 					$window.sessionStorage.removeItem(key);
