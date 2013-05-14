@@ -2,6 +2,12 @@
 
 This is an Angular.js module that provides easy access (read/write/remove/clear) to the browser's local and session storage.
 
+#### Demo
+
+http://jsfiddle.net/Knorcedger/nR4My/
+
+The jsfiddle demo also exists inside the repository in the demo folder.
+
 #### Usage
 
 Your app must list browserStorage as a dependency. Then, you should also list the browserStorage service as dependancy in your Controllers.
