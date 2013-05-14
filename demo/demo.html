@@ -6,43 +6,6 @@
 	<script type="text/javascript" src="demo.js"></script>
 </head>
 <body>
-	<div id="example-1">
-		<h2>Save</h2>
-		<pre>
-			// Saves to localStorage
-			browserStorage.local.save('mykey', 'myvalue');
-			// Saves to sessionStorage
-			browserStorage.session.save('mykey', 'myvalue');
-		</pre>
-		<h2>Save with expiration (in milliseconds)</h2>
-		<pre>
-			// saves the key for 1 second.
-			// When you will try to load it, after the 1 second, it will return null and delete the entry
-			browserStorage.local.save('mykey', 'myvalue', 1000);
-			browserStorage.session.save('mykey', 'myvalue', 1000);
-		</pre>
-		<h2>Load</h2>
-		<pre>
-			// Loads from localStorage
-			browserStorage.local.load('mykey');
-			// Loads from localStorage
-			browserStorage.session.load('mykey');
-		</pre>
-		<h2>Remove</h2>
-		<pre>
-			// Removes this key from localStorage
-			browserStorage.local.remove('mykey');
-			// Removes this key from localStorage
-			browserStorage.session.remove('mykey');
-		</pre>
-		<h2>Clear</h2>
-		<pre>
-			// Removes everything from localStorage
-			browserStorage.local.clear();
-			// Removes everything from localStorage
-			browserStorage.session.clear();
-		</pre>
-	</div>
 	<div id="demo-1" ng-controller="demo1">
 		<h3>First Demo</h3>
 		<div>
