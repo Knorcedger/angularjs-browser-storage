@@ -3,6 +3,7 @@
  *
  * @author Achilleas Tsoumitas
  * @version 1.0.0
+ * @documentation https://github.com/Knorcedger/angular-browser-storage
  *
  */
 
