@@ -4,7 +4,7 @@ This is an Angular.js module that provides easy access (read/write/remove/clear)
 
 #### Usage
 
-Your app must list browserStorage as a dependancy. You can then list in your Controllers the browserStorage service as dependancy and use it.
+Your app must list browserStorage as a dependency. Then, you should also list the browserStorage service as dependancy in your Controllers.
 
 ##### Save
 <pre>
