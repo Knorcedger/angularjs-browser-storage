@@ -1,8 +1,8 @@
 /**
- * An angular module that provides easy access to localStorage and sessionsStorage
+ * An angular module that provides easy access to localStorage and sessionStorage
  *
  * @author Achilleas Tsoumitas
- * @version 1.0.0
+ * @version 1.1.0
  * @documentation https://github.com/Knorcedger/angular-browser-storage
  *
  */
@@ -84,5 +84,32 @@
 		var value = this.getItem(key);
 		return value && JSON.parse(value);
 	};
+	
+	/**
+	 * A utility service that can be used to save variables either in a temp object (will be lost on refresh) 
+	 * or on browser localStorage.
+	 */
+	browserStorage.service('store', function(browserStorage) {
+		var store = {};
+		return {
+			set: function(key, value, browserStore) {
+				store[key] = value;
+				if (browserStore) {
+					browserStorage.local.save(key, value);
+				}
+			},
+			get: function(key) {
+				if (store.hasOwnProperty(key)) {
+					return store[key];
+				} else {
+					return browserStorage.local.load(key);
+				}
+			},
+			remove: function(key) {
+				delete store[key];
+				browserStorage.local.remove(key);
+			}
+		};
+	});
 
 }(window));

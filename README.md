@@ -1,4 +1,4 @@
-## angular-browser-storage v1.0.0 ([Download](https://raw.github.com/Knorcedger/angular-browser-storage/master/src/browserStorage.js))
+## angular-browser-storage v1.1.0 ([Download](https://raw.github.com/Knorcedger/angular-browser-storage/master/src/browserStorage.js))
 
 This is an Angular.js module that provides easy access (read/write/remove/clear) to the browser's local and session storage.
 
@@ -51,3 +51,5 @@ browserStorage.local.clear();
 // Removes everything from localStorage
 browserStorage.session.clear();
 ```
+
+A new utility service was added. The store service can be used to save variables either in a temp object (will be lost on refresh) or on browser localStorage.
