@@ -1,0 +1,50 @@
+{
+  "name": "angular-browser-storage",
+  "version": "1.1.3",
+  "description": "This is an Angular.js module that provides easy access (read/write/remove/clear) to the browser's local and session storage.",
+  "main": " ",
+  "scripts": {
+    "test": "gulp check-js",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Knorcedger/angular-browser-storage"
+  },
+  "keywords": [
+    "angular",
+    "localStorage",
+    "sessionStorage",
+    "browser"
+  ],
+  "author": "Knorcedger <knorcedger@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Knorcedger/angular-browser-storage/issues"
+  },
+  "homepage": "https://github.com/Knorcedger/angular-browser-storage",
+  "jshintConfig": {
+    "curly": true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "browser": true,
+    "globals": {
+      "jQuery": true
+    },
+    "loopfunc": true,
+    "trailing": true,
+    "scripturl": true
+  },
+  "jscsConfig": {
+    "preset": "google",
+    "maximumLineLength": 120,
+    "validateIndentation": "\t",
+    "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.3",
+    "gulp": "^3.9.0",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2"
+  }
+}

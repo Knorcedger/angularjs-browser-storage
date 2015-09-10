@@ -1,11 +1,3 @@
-/**
-* An angular module that provides easy access to localStorage and sessionStorage
-*
-* @author Achilleas Tsoumitas
-* @version 1.1.2
-* @documentation https://github.com/Knorcedger/angular-browser-storage
-*
-*/
 var browserStorage = angular.module('browserStorage', []);
 
 browserStorage.service('browserStorage', function($window) {
@@ -18,7 +10,7 @@ browserStorage.service('browserStorage', function($window) {
 			object.expiration = expiration && Math.round(new Date().getTime() / 1000) + expiration;
 		}
 		$window[type + 'Storage'].setObject(key, object);
-		
+
 		return value;
 	};
 
@@ -78,7 +70,7 @@ window.Storage.prototype.getObject = function(key) {
 };
 
 /**
- * A utility service that can be used to save variables either in a temp object (will be lost on refresh) 
+ * A utility service that can be used to save variables either in a temp object (will be lost on refresh)
  * or on browser localStorage.
  */
 browserStorage.service('store', function(browserStorage) {
