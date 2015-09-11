@@ -1,4 +1,4 @@
-## angular-browser-storage v1.1.2 ([Download](https://raw.github.com/Knorcedger/angular-browser-storage/master/src/browserStorage.js))
+## angularjs-browser-storage
 
 This is an Angular.js module that provides easy access (read/write/remove/clear) to the browser's local and session storage.
 
