@@ -1,6 +1,6 @@
 {
   "name": "angular-browser-storage",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "This is an Angular.js module that provides easy access (read/write/remove/clear) to the browser's local and session storage.",
   "main": " ",
   "scripts": {
